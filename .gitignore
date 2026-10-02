@@ -39,3 +39,7 @@ opencode.json
 .opencode
 # CI workflows need a PAT with 'workflow' scope to push; re-add if granted
 .github/workflows/
+
+.env
+.env*.local
+.env.local
