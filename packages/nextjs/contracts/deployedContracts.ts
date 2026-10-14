@@ -5,671 +5,1378 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
-  11155111: {
+  31337: {
     YourCollectible: {
-      address: "0x59497b2F1f1AcEd69A8AeC9e0004B9Ee67B328B3",
+      address: "0x5fbdb2315678afecb367f032d93f642f64180aa3",
       abi: [
+        {
+          inputs: [],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "ERC721EnumerableForbiddenBatchMint",
+          type: "error",
+        },
+        {
+          inputs: [
             {
-                  "inputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "constructor"
+              internalType: "address",
+              name: "sender",
+              type: "address",
             },
             {
-                  "inputs": [],
-                  "name": "ERC721EnumerableForbiddenBatchMint",
-                  "type": "error"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "sender",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        },
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721IncorrectOwner",
-                  "type": "error"
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "ERC721IncorrectOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "operator",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "ERC721InsufficientApproval",
-                  "type": "error"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721InsufficientApproval",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "approver",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidApprover",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidOperator",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "receiver",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidReceiver",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "sender",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidSender",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721NonexistentToken",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "approver",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721InvalidApprover",
-                  "type": "error"
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721OutOfBoundsIndex",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "OwnableInvalidOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "OwnableUnauthorizedAccount",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "operator",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721InvalidOperator",
-                  "type": "error"
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721InvalidOwner",
-                  "type": "error"
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "receiver",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721InvalidReceiver",
-                  "type": "error"
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "sender",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "ERC721InvalidSender",
-                  "type": "error"
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_fromTokenId",
+              type: "uint256",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "ERC721NonexistentToken",
-                  "type": "error"
+              indexed: false,
+              internalType: "uint256",
+              name: "_toTokenId",
+              type: "uint256",
+            },
+          ],
+          name: "BatchMetadataUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "MetadataUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "index",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "ERC721OutOfBoundsIndex",
-                  "type": "error"
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "OwnableInvalidOwner",
-                  "type": "error"
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "account",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "OwnableUnauthorizedAccount",
-                  "type": "error"
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "approved",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "Approval",
-                  "type": "event"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApproved",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "operator",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": false,
-                              "internalType": "bool",
-                              "name": "approved",
-                              "type": "bool"
-                        }
-                  ],
-                  "name": "ApprovalForAll",
-                  "type": "event"
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAll",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": false,
-                              "internalType": "uint256",
-                              "name": "_fromTokenId",
-                              "type": "uint256"
-                        },
-                        {
-                              "indexed": false,
-                              "internalType": "uint256",
-                              "name": "_toTokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "BatchMetadataUpdate",
-                  "type": "event"
+              internalType: "string",
+              name: "uri",
+              type: "string",
+            },
+          ],
+          name: "mintItem",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ownerOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": false,
-                              "internalType": "uint256",
-                              "name": "_tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "MetadataUpdate",
-                  "type": "event"
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "previousOwner",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "newOwner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "OwnershipTransferred",
-                  "type": "event"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
             },
             {
-                  "anonymous": false,
-                  "inputs": [
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "from",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "indexed": true,
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "Transfer",
-                  "type": "event"
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "approve",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "balanceOf",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "getApproved",
-                  "outputs": [
-                        {
-                              "internalType": "address",
-                              "name": "",
-                              "type": "address"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAll",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceId",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "tokenByIndex",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "tokenIdCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "address",
-                              "name": "operator",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "isApprovedForAll",
-                  "outputs": [
-                        {
-                              "internalType": "bool",
-                              "name": "",
-                              "type": "bool"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "tokenOfOwnerByIndex",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "tokenURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
             },
             {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "string",
-                              "name": "uri",
-                              "type": "string"
-                        }
-                  ],
-                  "name": "mintItem",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
+              internalType: "address",
+              name: "to",
+              type: "address",
             },
             {
-                  "inputs": [],
-                  "name": "name",
-                  "outputs": [
-                        {
-                              "internalType": "string",
-                              "name": "",
-                              "type": "string"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
             },
+          ],
+          name: "transferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
             {
-                  "inputs": [],
-                  "name": "owner",
-                  "outputs": [
-                        {
-                              "internalType": "address",
-                              "name": "",
-                              "type": "address"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
             },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "ownerOf",
-                  "outputs": [
-                        {
-                              "internalType": "address",
-                              "name": "",
-                              "type": "address"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [],
-                  "name": "renounceOwnership",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "from",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "safeTransferFrom",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "from",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        },
-                        {
-                              "internalType": "bytes",
-                              "name": "data",
-                              "type": "bytes"
-                        }
-                  ],
-                  "name": "safeTransferFrom",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "operator",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "bool",
-                              "name": "approved",
-                              "type": "bool"
-                        }
-                  ],
-                  "name": "setApprovalForAll",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "bytes4",
-                              "name": "interfaceId",
-                              "type": "bytes4"
-                        }
-                  ],
-                  "name": "supportsInterface",
-                  "outputs": [
-                        {
-                              "internalType": "bool",
-                              "name": "",
-                              "type": "bool"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [],
-                  "name": "symbol",
-                  "outputs": [
-                        {
-                              "internalType": "string",
-                              "name": "",
-                              "type": "string"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "index",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "tokenByIndex",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [],
-                  "name": "tokenIdCounter",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "owner",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "index",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "tokenOfOwnerByIndex",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "tokenURI",
-                  "outputs": [
-                        {
-                              "internalType": "string",
-                              "name": "",
-                              "type": "string"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [],
-                  "name": "totalSupply",
-                  "outputs": [
-                        {
-                              "internalType": "uint256",
-                              "name": "",
-                              "type": "uint256"
-                        }
-                  ],
-                  "stateMutability": "view",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "from",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "address",
-                              "name": "to",
-                              "type": "address"
-                        },
-                        {
-                              "internalType": "uint256",
-                              "name": "tokenId",
-                              "type": "uint256"
-                        }
-                  ],
-                  "name": "transferFrom",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            },
-            {
-                  "inputs": [
-                        {
-                              "internalType": "address",
-                              "name": "newOwner",
-                              "type": "address"
-                        }
-                  ],
-                  "name": "transferOwnership",
-                  "outputs": [],
-                  "stateMutability": "nonpayable",
-                  "type": "function"
-            }
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
       ],
+      inheritedFunctions: {
+        approve: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        balanceOf: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        getApproved: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        isApprovedForAll: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        name: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        ownerOf: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        safeTransferFrom: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        setApprovalForAll: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        supportsInterface: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        symbol: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        tokenURI: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        transferFrom: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        tokenByIndex: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        tokenOfOwnerByIndex: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        totalSupply: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        owner: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+        renounceOwnership: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+        transferOwnership: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+      },
+      deployedOnBlock: 1,
     },
   },
-} as const satisfies GenericContractsDeclaration;
+  11155111: {
+    YourCollectible: {
+      address: "0x04b7ffc9e392e612106198087ef216e56d39d81a",
+      abi: [
+        {
+          inputs: [],
+          stateMutability: "nonpayable",
+          type: "constructor",
+        },
+        {
+          inputs: [],
+          name: "ERC721EnumerableForbiddenBatchMint",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "sender",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "ERC721IncorrectOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721InsufficientApproval",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "approver",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidApprover",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidOperator",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "receiver",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidReceiver",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "sender",
+              type: "address",
+            },
+          ],
+          name: "ERC721InvalidSender",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721NonexistentToken",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "ERC721OutOfBoundsIndex",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "OwnableInvalidOwner",
+          type: "error",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "account",
+              type: "address",
+            },
+          ],
+          name: "OwnableUnauthorizedAccount",
+          type: "error",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "approved",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "ApprovalForAll",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_fromTokenId",
+              type: "uint256",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_toTokenId",
+              type: "uint256",
+            },
+          ],
+          name: "BatchMetadataUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "_tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "MetadataUpdate",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "previousOwner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "OwnershipTransferred",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "approve",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+          ],
+          name: "balanceOf",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "getApproved",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+          ],
+          name: "isApprovedForAll",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "string",
+              name: "uri",
+              type: "string",
+            },
+          ],
+          name: "mintItem",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "owner",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "ownerOf",
+          outputs: [
+            {
+              internalType: "address",
+              name: "",
+              type: "address",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "renounceOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+            {
+              internalType: "bytes",
+              name: "data",
+              type: "bytes",
+            },
+          ],
+          name: "safeTransferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "operator",
+              type: "address",
+            },
+            {
+              internalType: "bool",
+              name: "approved",
+              type: "bool",
+            },
+          ],
+          name: "setApprovalForAll",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "bytes4",
+              name: "interfaceId",
+              type: "bytes4",
+            },
+          ],
+          name: "supportsInterface",
+          outputs: [
+            {
+              internalType: "bool",
+              name: "",
+              type: "bool",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "tokenByIndex",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "tokenIdCounter",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "index",
+              type: "uint256",
+            },
+          ],
+          name: "tokenOfOwnerByIndex",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "tokenURI",
+          outputs: [
+            {
+              internalType: "string",
+              name: "",
+              type: "string",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [
+            {
+              internalType: "uint256",
+              name: "",
+              type: "uint256",
+            },
+          ],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              internalType: "uint256",
+              name: "tokenId",
+              type: "uint256",
+            },
+          ],
+          name: "transferFrom",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "address",
+              name: "newOwner",
+              type: "address",
+            },
+          ],
+          name: "transferOwnership",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+      ],
+      inheritedFunctions: {
+        approve: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        balanceOf: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        getApproved: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        isApprovedForAll: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        name: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        ownerOf: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        safeTransferFrom: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        setApprovalForAll: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        supportsInterface: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        symbol: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        tokenURI: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        transferFrom: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721URIStorage.sol",
+        tokenByIndex: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        tokenOfOwnerByIndex: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        totalSupply: "npm/@openzeppelin/contracts@5.7.0/token/ERC721/extensions/ERC721Enumerable.sol",
+        owner: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+        renounceOwnership: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+        transferOwnership: "npm/@openzeppelin/contracts@5.7.0/access/Ownable.sol",
+      },
+      deployedOnBlock: 11906841,
+    },
+  },
+} as const;
 
 export default deployedContracts satisfies GenericContractsDeclaration;

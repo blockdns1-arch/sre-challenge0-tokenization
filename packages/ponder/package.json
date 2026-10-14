@@ -1,0 +1,25 @@
+{
+  "name": "@se-2/ponder",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ponder dev",
+    "start": "ponder start",
+    "codegen": "ponder codegen",
+    "serve": "ponder serve",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "hono": "^4.5.0",
+    "ponder": "0.16.6",
+    "viem": "^2.53.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.8.2"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

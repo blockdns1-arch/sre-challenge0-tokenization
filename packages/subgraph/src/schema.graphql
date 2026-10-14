@@ -1,0 +1,22 @@
+type Nft @entity(immutable: false) {
+  id: ID!
+  owner: Bytes!
+  uri: String
+  mintedAt: BigInt!
+  transferredAt: BigInt
+}
+
+type Holder @entity(immutable: false) {
+  id: ID!
+  balance: BigInt!
+}
+
+type NftTransfer @entity(immutable: true) {
+  id: ID!
+  tokenId: BigInt!
+  from: Bytes!
+  to: Bytes!
+  blockNumber: BigInt!
+  timestamp: BigInt!
+  txHash: Bytes!
+}

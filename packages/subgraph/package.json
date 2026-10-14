@@ -1,0 +1,31 @@
+﻿{
+    "name":  "@se-2/subgraph",
+    "version":  "0.0.1",
+    "type":  "module",
+    "scripts":  {
+                    "abi-copy":  "tsx scripts/abi_copy.ts",
+                    "codegen":  "graph codegen",
+                    "build":  "graph build",
+                    "graph":  "graph",
+                    "deploy":  "graph deploy --studio your-collectible --version-label v0.1.0",
+                    "create-local":  "graph create --node http://localhost:8020/ blockdns1-arch/your-collectible",
+                    "remove-local":  "graph remove --node http://localhost:8020/ blockdns1-arch/your-collectible",
+                    "deploy-local":  "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 blockdns1-arch/your-collectible",
+                    "local-ship":  "yarn abi-copy \u0026\u0026 yarn codegen \u0026\u0026 yarn build --network localhost \u0026\u0026 yarn deploy-local",
+                    "test":  "graph test -d",
+                    "run-node":  "cd graph-node \u0026\u0026 docker compose up",
+                    "stop-node":  "cd graph-node \u0026\u0026 docker compose down",
+                    "clean-node":  "rm -rf graph-node/data/"
+                },
+    "dependencies":  {
+                         "@graphprotocol/graph-cli":  "^0.98.0",
+                         "@graphprotocol/graph-ts":  "^0.38.0",
+                         "tsx":  "^4.0.0",
+                         "typescript":  "^5.7.0"
+                     },
+    "devDependencies":  {
+                            "@types/chalk":  "^2.2.0",
+                            "@types/node":  "^20.11.0",
+                            "matchstick-as":  "~0.6.0"
+                        }
+}

@@ -1,0 +1,27 @@
+specVersion: 0.0.4
+description: YourCollectible NFT - mint, holders and transfer history (Speedrun Ethereum)
+repository: https://github.com/blockdns1-arch
+schema:
+  file: ./src/schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: YourCollectible
+    network: sepolia
+    source:
+      abi: YourCollectible
+      address: "0x04b7ffc9e392e612106198087ef216e56d39d81a"
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Nft
+        - Holder
+        - NftTransfer
+      abis:
+        - name: YourCollectible
+          file: ./abis/sepolia_YourCollectible.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts

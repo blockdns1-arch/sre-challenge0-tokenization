@@ -1,0 +1,3 @@
+test:
+  directory: ./tests
+  manifestPath: ./subgraph.yaml

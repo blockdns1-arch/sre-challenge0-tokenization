@@ -9,6 +9,7 @@ import { Bars3Icon, BugAntIcon } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
 import { PhotoIcon, ArrowPathIcon, ArrowUpTrayIcon, ArrowDownTrayIcon} from "@heroicons/react/24/outline";
+import { ChartBarIcon, CircleStackIcon } from "@heroicons/react/24/outline";
 
 
 type HeaderMenuLink = {
@@ -41,6 +42,16 @@ export const menuLinks: HeaderMenuLink[] = [
     label: 'IPFS Download',
     href: '/ipfsDownload',
     icon: <ArrowDownTrayIcon className="h-4 w-4" />
+  },
+  {
+    label: 'Ponder',
+    href: '/ponder',
+    icon: <ChartBarIcon className="h-4 w-4" />
+  },
+  {
+    label: 'Subgraph',
+    href: '/subgraph',
+    icon: <CircleStackIcon className="h-4 w-4" />
   },
   {
     label: 'Debug Contracts',

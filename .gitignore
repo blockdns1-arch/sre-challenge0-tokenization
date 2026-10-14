@@ -43,3 +43,11 @@ opencode.json
 .env
 .env*.local
 .env.local
+
+# local run wrappers, daemon logs, and binaries (may contain RPC secrets / large)
+run_*.cmd
+*.log
+cloudflared.exe
+vercel_new*.txt
+seed-local.ps1
+.ponder

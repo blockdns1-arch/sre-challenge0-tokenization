@@ -1,0 +1,12 @@
+{
+  "localhost": {
+    "YourCollectible": {
+      "address": "0x5fbdb2315678afecb367f032d93f642f64180aa3"
+    }
+  },
+  "sepolia": {
+    "YourCollectible": {
+      "address": "0x04b7ffc9e392e612106198087ef216e56d39d81a"
+    }
+  }
+}
